@@ -69,7 +69,7 @@ jobs:
           response=$(curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}" \
             -w "%{http_code}" -o /dev/null -s)
 
-          if [ "$response" -eq 200 ] || [ "$response" -eq 201 ]; then
+          if [ "$response" -eq 200 ] || [ "$response" -eq 201 ] || [ "$response" -eq 202 ]; then
             echo "��� Production deployment triggered"
           else
             echo "❌ Deployment failed with status $response"
